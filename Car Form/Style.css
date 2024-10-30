@@ -1,11 +1,11 @@
-td,th {
-    border: 1px, solid #000000;
-    border-collapse: collapse; 
-    text-align: center;
-}
 #Car {
-    border: 3px, solid, green;
     width: 100%;
+}
+
+#Car, #Car td, #Car th {
+    border: 3px, solid, green;
+    border-collapse: collapse;
+    text-align: center;
   }
 
   body {
@@ -14,8 +14,12 @@ td,th {
     background-attachment: fixed;
   }
   #MotorCycles {
-    border: 10px, double, red;
     width: 100%;
+  }
+  #MotorCycles, #MotorCycles th,  #MotorCycles td{
+    border: 10px, double, red;
+    border-collapse: collapse;
+    text-align: center;
   }
   input[type=text], select {
     width: 100%;
