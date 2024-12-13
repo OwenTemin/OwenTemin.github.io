@@ -1,0 +1,22 @@
+h1{
+    font-size: 75px;
+}
+.Intro p{
+    font-size: 45px;
+}
+.Intro{
+    text-align: center;
+}
+.Nav a{
+    float: left;
+    padding: 14px 50px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+}
+.Nav{
+     padding: 35px;
+     background-color: black;
+     overflow: hidden;
+}
