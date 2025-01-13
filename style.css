@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 body{
     margin: 0px;
+    background-color: #264653;
 }
 
 
@@ -12,7 +15,7 @@ body{
 }
 .grid2{
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(11, 1fr);
     display: grid;
     height: auto;
     gap: 10px;
@@ -25,17 +28,17 @@ body{
     padding: 16px 16px;
     height: 100px;
 }
-.nav{
+nav{
     position: sticky;
     top:0;
     grid-column: 1/11;
     grid-row: 1/2;
-    background-color: #E9C500;
+    background-color: #E76F51;
     text-align: center;
     border-width: 0px;
     height: 58px;
 }
-.nav a{
+nav a{
     color: black;
     font-size: 20px;
     float: left;
@@ -44,9 +47,9 @@ body{
     text-align: center;
 
 }
-.nav a:hover{
-    background-color: white;
-    color: black;
+nav a:hover{
+    background-color: #264653;
+    color: #E76F51;
 }
 #main1{
     margin-left: 8px;
@@ -63,31 +66,37 @@ body{
     grid-column: 6/11;
     grid-row: 4/6;
     margin-right: 8px;
+    color: #E76F51;
 }
 #main4{
     margin-right: 8px;
     grid-column: 6/11;
     grid-row: 6/8;
+    color: #E76F51;
 }
 h1{
     text-align: center;
     font-size: 45px;
+    color: #E76F51;
+    font-family: "Oswald", serif;
 }
 .border{
     border-collapse: collapse;                                                             
     border-style: solid;
     border-width: 5px;
-    border-color: black;
+    border-color: #E76F51;
 }
 p{
     font-size: 20px;
     text-indent: 30px;
     margin: 10px;
+    color: #E76F51;
 }
 h2{
     font-size: 30px;
     text-align: center;
     margin: 10px;
+    color: #E76F51;
 }
 .project-1{
     grid-column: 1/6;
@@ -101,7 +110,7 @@ h2{
 }
 .project-1 a{
     font-size: 25px;
-    color: black;
+    color: #E76F51;
     margin-left: 10px;
     margin-top: 10px;
 }
@@ -110,12 +119,13 @@ h2{
 }
 .project-2 a{
     font-size: 25px;
-    color: black;
+    color: #E76F51;
     margin-left: 10px;
     margin-top: 10px;
 }
 .project-2 p{
     margin: 20px;
+    color:#E76F51;
 }
 #food{
     grid-column: 6/7;
@@ -131,6 +141,7 @@ table{
 }
 td{
     text-align: center;
+    color: #E76F51;
 }
 #overviewT{
     grid-column: 6/11;
@@ -152,8 +163,18 @@ td{
     grid-row: 9/12;
     margin-left: 8px;
 }
+#quicklinks a{
+    float: bottom;
+    text-align: center;
+    font-size: 50px;
+    padding: 25px 25px;
+    color: #E76F51;
+}
 .image{
     grid-column: 1/11;
     grid-row: 2/8;
     width: 100%;
+}
+footer a{
+    color: #E76F51;
 }
