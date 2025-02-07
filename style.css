@@ -15,7 +15,7 @@ body{
 }
 .grid2{
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(11, 1fr);
+    grid-template-rows: repeat(12, 1fr);
     display: grid;
     height: auto;
     gap: 10px;
@@ -158,12 +158,12 @@ td{
     grid-row: 8/9;
     margin-left: 8px;
 }
-#quicklinks{
+.quicklinks{
     grid-column: 1/6;
     grid-row: 9/12;
     margin-left: 8px;
 }
-#quicklinks a{
+.quicklinks a{
     float: bottom;
     text-align: center;
     font-size: 50px;
@@ -176,5 +176,16 @@ td{
     width: 100%;
 }
 footer a{
+    color: #E76F51;
+}
+#github{
+    grid-column: 1/11;
+    grid-row: 12/13;
+    margin: 8px;
+}
+#github a{
+    text-align: center;
+    font-size: 25px;
+    padding: 25px 25px;
     color: #E76F51;
 }
