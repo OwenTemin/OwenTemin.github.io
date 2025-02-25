@@ -1,0 +1,90 @@
+#photo1 {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    border: 2px solid red;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+#photo2 {
+    width: 25%;
+    height: auto;
+    max-height: 200px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    filter: grayscale(50%);
+}
+
+#photo3 {
+    width: 110%;
+    height: auto;
+    min-width: 150px;
+    border: 2px dashed green;
+    filter: sepia(60%);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#photo4 {
+    width: 76%;
+    height: 100px;
+    max-width: 180px;
+    border: 2px solid purple;
+    border-radius: 50%;
+    filter: brightness(80%);
+}
+
+#photo5 {
+    height: auto;
+    max-height: 250px;
+    border: 2px solid orange;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    filter: contrast(120%);
+}
+
+#photo6 {
+    width: 100%;
+    height: 25px;
+    max-width: 220px;
+    border: 2px solid pink;
+    border-radius: 20px;
+    filter: hue-rotate(90deg);
+}
+
+#photo7 {
+    width: 100%;
+    height: auto;
+    min-width: 170px;
+    border: 2px dotted yellow;
+    filter: invert(50%);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
+}
+
+#photo8 {
+    width: 100%;
+    height: auto;
+    max-height: 210px;
+    border: 2px solid black;
+    filter: blur(1px);
+    opacity: 0.8;
+}
+
+#photo9 {
+    width: 100%;
+    height: auto;
+    max-width: 190px;
+    border: 2px solid gray;
+    filter: saturate(150%);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#photo10 {
+    width: 10000px;
+    height: 57px;
+    max-height: 230px;
+    border: 2px solid brown;
+    border-radius: 10px;
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+}
+

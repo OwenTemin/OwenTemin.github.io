@@ -12,15 +12,15 @@
     <form action="https://httpbin.org/post" method="POST">
 	<label for="email">Email</label>
 	<br>
-	<input type="email" name="email" id="email" placeholder="name@example.com">
+	<input type="email" name="email" id="email" placeholder="name@example.com" required>
 	<br>
 	<label for="pNumber">Phone Number</label>
 	<br>
-	<input type="text" name="Phone_Number" id="pNumber" placeholder="123-456-7890">
+	<input type="text" name="Phone_Number" id="pNumber" placeholder="123-456-7890" required>
         <br>
         <label for="people">How Many People will you bring to the party</label>
         <br>
-        <input type="number" name="people" id="people" placeholder="# of people">
+        <input type="number" name="people" id="people" placeholder="# of people" required>
         <br>
 	<p>What is your favorite Flavor of Ice Cream?</p>
 	<input type="radio" name="IceCream" id="Vanilla">
@@ -63,7 +63,9 @@
 	    <option value="Magician">Magician</option>
 	</select>
 	<br>
-	<label for="Do you have any other suggestions or comments?">
+	<label for="suggestion">Do you have any other suggestions or comments?</label>
+	<input type="text" name="suggestions" id="suggestion">
+	<br>
 	<input type="submit" name="Submit">
 	</form>
 </body>
