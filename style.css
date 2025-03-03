@@ -15,7 +15,7 @@ body{
 }
 .grid2{
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(14, 1fr);
     display: grid;
     height: auto;
     gap: 10px;
@@ -188,4 +188,9 @@ footer a{
     font-size: 25px;
     padding: 25px 25px;
     color: #E76F51;
+}
+#journal{
+    grid-column: 1/11;
+    grid-template: 4/6;
+
 }
