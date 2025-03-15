@@ -15,7 +15,7 @@ body{
 }
 .grid2{
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(14, 1fr);
+    grid-template-rows: repeat(17, 1fr);
     display: grid;
     height: auto;
     gap: 10px;
@@ -193,4 +193,13 @@ footer a{
     grid-column: 1/11;
     grid-template: 4/6;
 
+}
+#transition{
+    transition: width 5s, height 5s, transform 5s;
+    transition-timing-function: ease-in-out;
+}
+#transition:hover{
+    width: 75%;
+    height: 75%;
+    transform: rotate(360deg);
 }
