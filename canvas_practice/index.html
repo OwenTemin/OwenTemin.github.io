@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Self Portrait</title>
+    <script src="js/init.js"></script>
+    <style>
+        canvas {
+            display: block;
+            border: 1px solid;
+            margin: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400"></canvas>
+
+<script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Fill the background with a color
+    ctx.fillStyle = 'lightblue';
+    ctx.fillRect(0, 0, 400, 400);
+
+    // Head (bigger circle)
+    ctx.fillStyle = 'peachpuff';
+    ctx.beginPath();
+    ctx.arc(200, 150, 75, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Eyes (two small circles)
+    ctx.fillStyle = 'black';
+    ctx.beginPath();
+    ctx.arc(180, 140, 5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(220, 140, 5, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Mouth (arc)
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(200, 170, 25, 0, Math.PI);
+    ctx.stroke();
+
+    // Upper Body (rectangle)
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(150, 225, 100, 200);
+
+    // Arms (lines)
+    ctx.strokeStyle = 'peachpuff';
+    ctx.lineWidth = 10;
+    ctx.beginPath();
+    ctx.moveTo(150, 240);
+    ctx.lineTo(100, 200);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(250, 240);
+    ctx.lineTo(300, 200);
+    ctx.stroke();
+</script>
+
+</body>
+</html>
+
