@@ -4,31 +4,33 @@ body{
     margin: 0px;
     background-color: #264653;
 }
-
-
 .grid1{
-    grid: 
-	'nav nav' 1fr 
-	'quicklinksH OverviewH' 1fr
-	'quicklinks overview' 2fr
-	'repo repo'1fr 
-	/1fr 1fr
-	;
+    grid:
+    'nav nav' 1fr
+    'photo photo' 5fr
+    'quicklinksH OverviewH' 1fr
+    'quicklinks overview' 2fr
+    'repo repo'1fr
+    /1fr 1fr
+    ;
     display: grid;
     height: auto;
 }
 @media (max-width: 400px) {
-  .grid1 {
+    .grid1 {
     grid:
-      'nav' 1fr
-      'photo' 5fr
-      'quicklinksH' 1fr
-      'quicklinks' 2fr
-      'Overviewh' 1fr
-      'overview' 2fr
-      'repo' 1fr;
-  }
+    'nav' 1fr
+    'quicklinksH' 1fr
+    'quicklinks' 2fr
+    'OverviewH' 1fr
+    'overview' 2fr
+    'repo' 1fr;
+    }
+.image{
+    display:none;
 }
+}
+
 .grid{
     grid: 
 	'nav nav' 1fr
@@ -38,6 +40,20 @@ body{
 	/1fr 1fr;
     display: grid;
     height: auto;
+}
+@media (max-width: 400px) {
+    .grid{
+    grid: 
+    'nav' 1fr
+    'header' 1fr
+    'about' 2fr
+    'hobbie' 2fr
+    'fav' 1fr
+    ;
+    }
+.image{
+    display:none;
+}
 }
 .grid2{
     grid:
