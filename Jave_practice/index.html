@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Drawing</title>
+    <style>
+        /* Add some optional styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Circle Drawer</h1>
+    <p>Click anywhere on the canvas to draw a circle!</p>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <script>
+        // Get the canvas element and its drawing context
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Function to draw a circle at specified coordinates
+        function drawCircle(x, y) {
+            const radius = 50; // Adjust the radius as needed
+
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.fillStyle = "blue"; // Choose a fill color
+            ctx.fill(); // Fill the circle
+            ctx.strokeStyle = "black"; // Choose a border color
+            ctx.stroke(); // Draw the circle's border
+        }
+
+
+        drawCircle(100, 100);
+	drawCircle(250, 7);
+	drawCircle(500, 500);``
+    </script>
+</body>
+</html>
+
