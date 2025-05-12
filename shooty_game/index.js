@@ -51,17 +51,17 @@ function rand(){
 }
 
 function getCords(item){
-    let x = 0;
-    x = item * 100;
+    let x1 = 0;
+    x1 = item * 100;
     if ((item % 2) == 1){
-    y = 350;
+    y1 = 350;
     }
     if ((item % 2) == 0){
-    y = 300;
+    y1 = 300;
     }
-    x += 50;
-    console.log(x + " : " + y)
-    return { x, y };
+    x1 += 50;
+    //console.log(x + " : " + y)
+    return { x: x1, y: y1};
 }
 
 function drawBackground() {
@@ -77,47 +77,42 @@ function drawBackground() {
 
 function animate(){
     frame ++;
-    if (frame == 50){
+    if (frame == 60){
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawBackground();
+        cords = [];
         active = [];
         check = [];
 	frame = 0;
 	rand();
-	console.log(active);
+	//console.log(active);
 	active.forEach(item => {
         cords.push(getCords(item));
     });
+    //console.log(cords);
+    cords.forEach(cord => {
+        drawTarget(cord.x, cord.y);
+    });
     }
+    document.addEventListener("click", function(checkClick){
+        mouseX = checkClick.clientX;
+        mouseY = checkClick.clientY;
+       // console.log(mouseX + " : " + mouseY);
 
+        cords.forEach(item => {
+            console.log(item.x + (" : ") + item.y);
+            let xdiff = mouseX - item.x;
+            let ydiff = mouseY - item.y;
+            let diff = Math.sqrt(xdiff * xdiff + ydiff * ydiff);
+            //console.log(diff);
+            if (diff <= 35){
+                console.log("You hit a target");
+            }
+        });
+    });
  //   drawBoard();
     requestAnimationFrame(animate);
 }
 
 animate();
 
-/*
-// Create an empty list to store coordinates
-let coordinates = [];
-
-// Function to generate a random x, y coordinate
-function getRandomCoordinate() {
-    let x = Math.floor(Math.random() * 500); // Random x (0 to 499)
-    let y = Math.floor(Math.random() * 500); // Random y (0 to 499)
-    return { x, y }; // Return as an object
-}
-
-// Function to add a random coordinate to the list
-function addRandomCoordinate() {
-    let newCoord = getRandomCoordinate();
-    coordinates.push(newCoord); // Add to the list
-    console.log("Added:", newCoord);
-}
-
-// Example: Add 5 random coordinates to the list
-for (let i = 0; i < 5; i++) {
-    addRandomCoordinate();
-}
-
-console.log("Final coordinates list:", coordinates);
-*/
