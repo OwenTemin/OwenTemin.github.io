@@ -5,7 +5,7 @@ let check = [];
 let active = [];
 let frame = 0;
 let cords = [];
-
+let score = 0;
 
 function background(x, y) {
     ctx.fillStyle = "grey";
@@ -78,41 +78,45 @@ function drawBackground() {
 function animate(){
     frame ++;
     if (frame == 60){
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	drawBackground();
         cords = [];
         active = [];
         check = [];
-	frame = 0;
+	    frame = 0;
 	rand();
 	//console.log(active);
-	active.forEach(item => {
+    active.forEach(item => {
         cords.push(getCords(item));
     });
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBackground();
+    document.getElementById("Score").innerHTML = "Score: " + score;
     //console.log(cords);
     cords.forEach(cord => {
         drawTarget(cord.x, cord.y);
     });
-    }
-    document.addEventListener("click", function(checkClick){
-        mouseX = checkClick.clientX;
-        mouseY = checkClick.clientY;
-       // console.log(mouseX + " : " + mouseY);
-
-        cords.forEach(item => {
-            console.log(item.x + (" : ") + item.y);
-            let xdiff = mouseX - item.x;
-            let ydiff = mouseY - item.y;
-            let diff = Math.sqrt(xdiff * xdiff + ydiff * ydiff);
-            //console.log(diff);
-            if (diff <= 35){
-                console.log("You hit a target");
-            }
-        });
-    });
- //   drawBoard();
     requestAnimationFrame(animate);
 }
 
 animate();
+document.addEventListener("mousedown", function(checkClick){
+    const rect = canvas.getBoundingClientRect();
+    mouseX = checkClick.clientX - rect.left;
+    mouseY = checkClick.clientY - rect.top;
+    //console.log(mouseX + " : " + mouseY);
 
+    cords.forEach((item, index) => {
+        //console.log(item.x + (" : ") + item.y);
+        let xdiff = mouseX - item.x;
+        let ydiff = mouseY - item.y;
+        let diff = Math.sqrt(xdiff * xdiff + ydiff * ydiff);
+        //console.log(diff);
+        //console.log(index);
+        if (diff <= 35){
+            console.log(`You hit a target # ${index}: ${item} `);
+            cords.splice(index, 1);
+            console.log(index);
+            score ++;
+        }
+    });
+});

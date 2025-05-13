@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadow Assault</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+    canvas {
+      border: 2px solid white;
+      background: black;
+      display: block;
+      margin: 0 auto;
+    }
+    #ui {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shadow Assault</h1>
+  <p>Use Arrow Keys to move (controls may invert in gravity shifts) and Spacebar to shoot.</p>
+  <canvas id="gameCanvas" width="800" height="400"></canvas>
+  <div id="ui"></div>
+  <script src="game.js"></script>
+</body>
+</html>
