@@ -6,12 +6,57 @@ let active = [];
 let frame = 0;
 let cords = [];
 let score = 0;
+let gameRunning = false;
+let time = 30;
 
 function background(x, y) {
     ctx.fillStyle = "grey";
     ctx.beginPath();
     ctx.arc(x,y,35,0,2*Math.PI);
     ctx.fill();
+}
+
+function start(){
+    gameRunning = true;
+}
+
+function pause(){
+    gameRunning = false;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function restart(){
+    gameRunning = false;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    check = [];
+    active = [];
+    frame = 0;
+    cords = [];
+    score = 0;
+    time = 30;
+
+}
+
+function gameOver(){
+    gameRunning = false;
+    //ctx.clearRect(0,0, canvas.width, canvas.height);
+
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0,0,800,400);
+    ctx.fill();
+
+    ctx.font = "bold 100px Arial";
+    ctx.fillStyle = "red";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("Game Over", canvas.width / 2, canvas.height / 2);
+
+    ctx.font = "bold 30px Arial";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("Score: " + score, canvas.width / 2, canvas.height / 2 + 60);
+
 }
 
 function drawTarget(x, y) {                                                                                                                                                              
@@ -60,7 +105,6 @@ function getCords(item){
     y1 = 300;
     }
     x1 += 50;
-    //console.log(x + " : " + y)
     return { x: x1, y: y1};
 }
 
@@ -76,29 +120,49 @@ function drawBackground() {
 }
 
 function animate(){
-    frame ++;
-    if (frame == 60){
-        cords = [];
-        active = [];
-        check = [];
-	    frame = 0;
-	rand();
-	//console.log(active);
-    active.forEach(item => {
-        cords.push(getCords(item));
-    });
-    }
+    if (gameRunning){
+
+        //counts Frames    
+        frame ++;
+        //time --;
+
+        //counts to 60, finds new locations
+    
+    //clears board
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    //Draws Board
     drawBackground();
+
+    //checks Socre
     document.getElementById("Score").innerHTML = "Score: " + score;
-    //console.log(cords);
+    document.getElementById("time").innerHTML = "Time: " + time;
+    
+    //Draws Targets
     cords.forEach(cord => {
         drawTarget(cord.x, cord.y);
     });
+    if (frame == 60){
+        time --;
+        cords = [];
+        active = [];
+        check = [];
+        frame = 0;
+        rand();
+        //console.log(active);
+        active.forEach(item => {
+        cords.push(getCords(item));
+        });
+        if (time == 0){
+            gameOver();
+            time = 30;
+        }
+    }
+    }
     requestAnimationFrame(animate);
 }
-
 animate();
+
 document.addEventListener("mousedown", function(checkClick){
     const rect = canvas.getBoundingClientRect();
     mouseX = checkClick.clientX - rect.left;

@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shooty-Shooty</title>
+    <title>Bullseye Blitz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="top-box"></div>
+    <div id="top-box"><h1>Bullseye Blitz</h1></div>
     <canvas id="myCanvas"
             width="800"
             height="400">
     </canvas>
-    <p id="Score"></p>
+    <div id="bottom-box">
+        <button onclick="start()" id="start">Start</button>
+        <button onclick="pause()" id="pause">Pause</button>
+        <button onclick="restart()" id="restart">Restart</button>
+        <button onclick="gameOver()"></button>
+        <p id="Score">Score: 0</p>
+        <p id="time">Time: 0</p>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>

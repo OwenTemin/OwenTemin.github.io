@@ -3,35 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shadow Assault</title>
+  <title>Shadow Assault 3D</title>
   <style>
     body {
       margin: 0;
-      background: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
       overflow: hidden;
-    }
-    canvas {
-      border: 2px solid white;
-      background: black;
-      display: block;
-      margin: 0 auto;
+      background: #000;
     }
     #ui {
       position: absolute;
       top: 10px;
       left: 10px;
-      font-size: 18px;
+      color: white;
+      font-family: Arial, sans-serif;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
-  <h1>Shadow Assault</h1>
-  <p>Use Arrow Keys to move (controls may invert in gravity shifts) and Spacebar to shoot.</p>
-  <canvas id="gameCanvas" width="800" height="400"></canvas>
-  <div id="ui"></div>
+  <div id="ui">Shadow Assault 3D</div>
+  <!-- Load Three.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.151.3/build/three.min.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
