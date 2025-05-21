@@ -135,8 +135,8 @@ function animate(){
     drawBackground();
 
     //checks Socre
-    document.getElementById("Score").innerHTML = "Score: " + score;
-    document.getElementById("time").innerHTML = "Time: " + time;
+    document.getElementById("score").innerHTML = score;
+    //document.getElementById("time").innerHTML = "Time: " + time;
     
     //Draws Targets
     cords.forEach(cord => {
