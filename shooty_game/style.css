@@ -34,7 +34,7 @@ canvas{
     width: 808px;
     background-color: #654321;
     grid-template-columns: 2fr 1fr 1fr 2fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
     display: grid;
 }
 
@@ -59,4 +59,21 @@ canvas{
     font-size: larger;
 }
 
+.background{
+    background: white;
+    border-radius: 15px;
+    border: black 2px solid;
+    text-align: center;
+}
 
+.rules-container {
+    background-color: #fff8dc;
+    border: 2px solid #daa520;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    grid-column: 2/5;
+    grid-row: 2/4;
+  }

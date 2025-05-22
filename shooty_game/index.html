@@ -14,8 +14,18 @@
         <button onclick="start()" id="start">Start</button>
         <button onclick="pause()" id="pause">Pause</button>
         <button onclick="restart()" id="restart">Restart</button>
-        <h1 class="score">Score: </h1>
-        <p class="score" id="score"></p>
+        <div class="background" style="grid-row: 2/3; grid-column: 1/2;"><h1 id="score">Score: 0</h1></div>
+        <div class="background" style="grid-row: 3/4; grid-column: 1/2;"><h1 id="time">Time: 0 </h1></div>
+        <div class="rules-container">
+            <h1>Bullseye Blitz: Rules</h1>
+            <ol>
+              <li>Click “Start” to begin the 30-second round—targets will spawn randomly on the screen.</li>
+              <li>Click on each target as fast and accurately as possible to score points—every hit counts!</li>
+              <li>Use “Pause” if you need a breather, and “Restart” to reset your score and timer for a fresh blitz.</li>
+            </ol>
+            <p>🎯 Good luck, sharpshooter!</p>
+          </div>
+        
     </div>
     <script src="index.js"></script>
 </body>
